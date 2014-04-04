@@ -44,7 +44,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'sqlite3'
 gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
 gem 'rails_12factor', group: :production
