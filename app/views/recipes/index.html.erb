@@ -1,0 +1,52 @@
+<h1>Listing recipes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th>Content</th>
+      <th>Picture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.name %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.content %></td>
+        <td><%= image_tag recipe.picture_url(:thumb), class: 'img-circle' if recipe.picture? %></td>
+        <td>
+          <%= link_to recipe, class: 'btn btn-default' do %>
+            <span class="glyphicon glyphicon-search"></span>
+            Show
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_recipe_path(recipe), class: 'btn btn-default' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+            Edit
+        <% end %>
+        </td>
+        <td>
+          <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+            Destroy
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to new_recipe_path, class: 'btn btn-primary btn-lg' do %>
+  <span class="glyphicon glyphicon-plus"></span>
+  New Idea
+<% end %>
+      
