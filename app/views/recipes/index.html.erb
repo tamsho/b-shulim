@@ -1,50 +1,37 @@
-<h1>Listing recipes</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Ingredients</th>
-      <th>Content</th>
-      <th>Picture</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="container">
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.ingredients %></td>
-        <td><%= recipe.content %></td>
-        <td><%= image_tag recipe.picture_url(:thumb), class: 'img-circle' if recipe.picture? %></td>
-        <td>
-          <%= link_to recipe, class: 'btn btn-default' do %>
-            <span class="glyphicon glyphicon-search"></span>
-            Show
+  <div class="col-xs-12 col-sm-12">
+    <p class="pull-right visible-xs">
+      <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <div class="jumbotron">
+      <h1 align="center">Recipes</h1>
+    </div>
+    <div class="row">
+      <% @recipes.each do |recipe| %>
+        <div class="col-7 col-sm-7 col-lg-4">
+          <h2 align="center"><%= link_to(recipe.name, recipe) %></h2>
+          <p><%= link_to_image(recipe.picture_url, recipe, {:height => 200, class: 'img-circle'}, {}) if recipe.picture? %></p>
+          <td>
+            <%= link_to edit_recipe_path(recipe), class: 'btn btn-default' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              Edit
           <% end %>
-        </td>
-        <td>
-          <%= link_to edit_recipe_path(recipe), class: 'btn btn-default' do %>
-            <span class="glyphicon glyphicon-pencil"></span>
-            Edit
-        <% end %>
-        </td>
-        <td>
-          <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
-            <span class="glyphicon glyphicon-remove"></span>
-            Destroy
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </td>
+          <td>
+            <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <span class="glyphicon glyphicon-remove"></span>
+            <% end %>
+          </td>
+        </div><!--/span-->
+      <% end %>
+     
+    </div><!--/row-->
+  </div><!--/span-->
+</div><!--/.container-->
 
 <br>
-
 <%= link_to new_recipe_path, class: 'btn btn-primary btn-lg' do %>
   <span class="glyphicon glyphicon-plus"></span>
   New Recipe
