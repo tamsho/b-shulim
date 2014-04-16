@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <h4>מתכון </h4>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :ingredients %><br>
-    <%= f.text_area :ingredients %>
+  <div class="field" text-align="start">
+    <h4>מרכיבים</h4>
+    <%= f.text_area :ingredients, :cols => "90", :rows => "10", :wrap => "hard" %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
+    <h4>שלבי ההכנה</h4>
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :picture %><br>
+    <h4>תמונה</h4>
     <%= f.file_field :picture %>
   </div>
   <div class="actions">

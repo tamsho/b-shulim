@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+  <strong><%= @recipe.name %></strong>
+</h1>
+
 <p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
+<h4>
+  <strong>אבא תקנה בסופר</strong>
+  <%= simple_format @recipe.ingredients %>
+</h4>
 </p>
 
 <p>
-  <strong>Ingredients:</strong>
-  <%= @recipe.ingredients %>
+<h4>
+  <strong>אוקיי, מה עכשיו?</strong>
+  <%= simple_format @recipe.content %>
+</h4>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @recipe.content %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
   <%= image_tag(@recipe.picture_url, :width => 600) if @recipe.picture.present? %>
 </p>
 

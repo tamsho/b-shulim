@@ -6,7 +6,7 @@
       <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
     </p>
     <div class="jumbotron">
-      <h1 align="center">Recipes</h1>
+      <h1 align="center">בישולים</h1>
     </div>
     <div class="row">
       <% @recipes.each do |recipe| %>
@@ -32,8 +32,8 @@
 </div><!--/.container-->
 
 <br>
-<%= link_to new_recipe_path, class: 'btn btn-primary btn-lg' do %>
+<%= link_to new_recipe_path, class: 'btn btn-default btn-lg' do %>
   <span class="glyphicon glyphicon-plus"></span>
-  New Recipe
+  מתכון חדש
 <% end %>
       
