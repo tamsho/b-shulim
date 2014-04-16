@@ -47,5 +47,6 @@ end
 gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
 gem 'rails_12factor', group: :production
-
+gem 'paperclip'
+gem 'aws-sdk'
 ruby '2.1.1'
