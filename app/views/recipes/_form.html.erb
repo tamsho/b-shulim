@@ -13,7 +13,7 @@
 
   <div class="field">
     <h4>מתכון </h4>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :cols => "90", :rows => "10", :wrap => "hard" %>
   </div>
   <div class="field" text-align="start">
     <h4>מרכיבים</h4>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <h4>שלבי ההכנה</h4>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :cols => "90", :rows => "10", :wrap => "hard"%>
   </div>
   <div class="field">
     <h4>תמונה</h4>
